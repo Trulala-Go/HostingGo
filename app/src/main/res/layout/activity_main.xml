@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#000000"
+     android:orientation="horizontal">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:visibility="gone"
+         android:background="#444444"
+         android:orientation="vertical"
+         android:id="@+id/liner">
+
+        <EditText
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:background="#000000"
+             android:hint="MASUKAN URL"
+             android:padding="5dp"
+             android:layout_margin="10dp"
+             android:textColor="#afffff"
+             android:id="@+id/linknya" />
+
+        <LinearLayout
+             android:layout_height="100dp"
+             android:layout_width="match_parent"
+             android:background="#edaaaa"
+             android:gravity="center"
+             android:padding="10dp">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginEnd="20dp"
+                 android:gravity="center"
+                 android:background="#000000"
+                 android:orientation="vertical"
+                 android:id="@+id/uji">
+
+                <ImageView
+                     android:layout_height="40dp"
+                     android:layout_width="40dp"
+                     android:src="@drawable/sinyal"
+                     android:layout_margin="5dp" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:gravity="center"
+                     android:background="#333333"
+                     android:padding="3dp"
+                     android:textColor="#afffff"
+                     android:text="Uji Sinyal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="150dp"
+                 android:gravity="center"
+                 android:orientation="vertical">
+
+                <ScrollView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:layout_marginBottom="10dp"
+                         android:gravity="center"
+                         android:background="#000000"
+                         android:padding="5dp"
+                         android:textColor="#0fe000"
+                         android:id="@+id/up" />
+
+                </ScrollView>
+
+                <ScrollView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:gravity="center"
+                         android:background="#000000"
+                         android:padding="5dp"
+                         android:textColor="#0fe000"
+                         android:id="@+id/down" />
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="vertical"
+             android:layout_marginTop="10dp">
+
+            <Switch
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:background="#000000"
+                 android:padding="5dp"
+                 android:layout_margin="10dp"
+                 android:textColor="#afffff"
+                 android:id="@+id/mulaiHost"
+                 android:text="MULAI HOST" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="50dp"
+             android:layout_width="match_parent"
+             android:background="#222222"
+             android:gravity="center_vertical"
+             android:orientation="horizontal">
+
+            <ImageView
+                 android:layout_height="35dp"
+                 android:layout_width="35dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginEnd="35dp"
+                 android:id="@+id/nav" />
+
+            <ImageView
+                 android:layout_height="35dp"
+                 android:layout_width="35dp"
+                 android:src="@drawable/tf_file"
+                 android:layout_marginEnd="20dp"
+                 android:id="@+id/tfFile" />
+
+            <ImageView
+                 android:layout_height="35dp"
+                 android:layout_width="35dp"
+                 android:src="@drawable/tf_folder"
+                 android:layout_marginEnd="20dp"
+                 android:id="@+id/tfFol" />
+
+            <ImageView
+                 android:layout_height="35dp"
+                 android:layout_width="35dp"
+                 android:src="@drawable/file_baru"
+                 android:layout_marginEnd="20dp"
+                 android:id="@+id/fileBaru" />
+
+            <ImageView
+                 android:layout_height="35dp"
+                 android:layout_width="35dp"
+                 android:src="@drawable/folder_baru"
+                 android:layout_marginEnd="25dp"
+                 android:id="@+id/folderBaru" />
+
+            <ImageView
+                 android:layout_height="35dp"
+                 android:layout_width="35dp"
+                 android:visibility="gone"
+                 android:src="@drawable/kembali"
+                 android:id="@+id/kembali" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="30dp"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:background="#daadaa"
+             android:gravity="center"
+             android:orientation="horizontal"
+             android:layout_marginTop="10dp"
+             android:id="@+id/lama">
+
+            <ImageView
+                 android:layout_height="25dp"
+                 android:layout_width="25dp"
+                 android:layout_marginEnd="25dp"
+                 android:src="@drawable/salin"
+                 android:id="@+id/salin" />
+
+            <ImageView
+                 android:layout_height="25dp"
+                 android:layout_width="25dp"
+                 android:layout_marginEnd="25dp"
+                 android:src="@drawable/potong"
+                 android:id="@+id/potong" />
+
+            <ImageView
+                 android:layout_height="25dp"
+                 android:layout_width="25dp"
+                 android:layout_marginEnd="25dp"
+                 android:src="@drawable/hapus"
+                 android:id="@+id/hapus" />
+
+            <ImageView
+                 android:layout_height="25dp"
+                 android:layout_width="25dp"
+                 android:layout_marginEnd="25dp"
+                 android:src="@drawable/namai"
+                 android:id="@+id/rename" />
+
+            <ImageView
+                 android:layout_height="25dp"
+                 android:layout_width="25dp"
+                 android:layout_marginEnd="25dp"
+                 android:src="@drawable/tempel"
+                 android:id="@+id/tempel" />
+
+            <TextView
+                 android:layout_height="25dp"
+                 android:layout_width="25dp"
+                 android:gravity="center"
+                 android:background="#f00000"
+                 android:textSize="20dp"
+                 android:id="@+id/tutupLama"
+                 android:text="x" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:padding="5dp"
+             android:orientation="vertical">
+
+            <LinearLayout
+                 android:layout_height="15dp"
+                 android:layout_width="match_parent"
+                 android:background="#222222">
+
+                <TextView
+                     android:layout_height="15dp"
+                     android:layout_width="match_parent"
+                     android:gravity="center_vertical"
+                     android:textSize="12dp"
+                     android:textColor="#afffff"
+                     android:textIsSelectable="true"
+                     android:id="@+id/jalur"
+                     android:text="/" />
+
+            </LinearLayout>
+
+            <ScrollView
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:layout_margin="5dp">
+
+                <GridLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:orientation="horizontal"
+                     android:id="@+id/grid"
+                     android:layout_gravity="center_horizontal"
+                     android:columnCount="3">
+
+                </GridLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

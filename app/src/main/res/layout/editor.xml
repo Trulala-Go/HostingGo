@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#000000"
+     android:orientation="horizontal">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:visibility="gone"
+         android:id="@+id/liner">
+
+        <TextView
+             android:layout_height="30dp"
+             android:layout_width="30dp"
+             android:layout_marginEnd="30dp"
+             android:background="#f00000"
+             android:gravity="center"
+             android:textColor="#000000"
+             android:id="@+id/keluar"
+             android:text="X" />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="#ddeadd"
+             android:orientation="horizontal">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginEnd="30dp"
+                 android:id="@+id/nav" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/simpan"
+                 android:layout_marginEnd="20dp"
+                 android:background="#afffff"
+                 android:padding="5dp"
+                 android:id="@+id/simpan" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="10dp"
+                 android:src="@drawable/undo"
+                 android:id="@+id/undo" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:visibility="gone"
+                 android:src="@drawable/redo"
+                 android:id="@+id/redo" />
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="20dp"
+             android:layout_width="match_parent"
+             android:background="#222222"
+             android:layout_margin="10dp"
+             android:textColor="#affddd"
+             android:text="/"
+             android:id="@+id/nama" />
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:background="#000000"
+             android:layout_margin="10dp">
+
+            <ScrollView
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent">
+
+                <EditText
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:textColor="#afffff"
+                     android:id="@+id/tulis" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
