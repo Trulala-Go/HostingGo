@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import android.view.*
 import java.io.*
+import fi.iki.elonen.NanoHTTPD
 import androidx.core.content.FileProvider
 import android.net.Uri
 import android.content.*
@@ -14,6 +15,7 @@ import androidx.documentfile.provider.DocumentFile
 import com.bumptech.glide.Glide
 import java.net.HttpURLConnection
 import java.net.URL
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             liner.visibility = if (liner.visibility == View.GONE) View.VISIBLE else View.GONE
         }
 
-        val memoApk = File(filesDir, "MemoGo")
+        val memoApk = File(filesDir, "memogo")
         if (!memoApk.exists()) {
             memoApk.mkdirs()
         }
@@ -49,6 +51,12 @@ class MainActivity : AppCompatActivity() {
         
         findViewById<LinearLayout>(R.id.uji).setOnClickListener{ UjiPing()}
         
+        val mulaiHost = findViewById<Switch>(R.id.mulaiHost)
+        mulaiHost.setOnCheckedChangeListener { _, isChecked ->
+        if (isChecked) { MulaiHost() }
+        else { StopHost() }
+        }
+        //kode
     }
 
     private fun SiapkanGrid(folder: File) {
@@ -451,5 +459,62 @@ private fun getMimeType(ext: String): String {
         }
         .setNegativeButton("Batal", null)
         .show()
+    }
+    
+    private var server: MyNanoHttpd? = null
+
+    private fun MulaiHost() {
+    startService(Intent(this, ServerService::class.java))
+    val alamat = findViewById<TextView>(R.id.alamat)
+
+    val alat = listOf(
+        "login.html", "login.css", "login.js",
+        "register.html", "register.css", "register.js",
+        "beranda.html", "beranda.css", "beranda.js"
+    )
+    
+    val targetDir = File(filesDir, "memogo")
+    if (!targetDir.exists()) targetDir.mkdirs()
+    
+    alat.forEach { filename ->
+        assets.open(filename).use { input ->
+            File(targetDir, filename).outputStream().use { output ->
+                input.copyTo(output)
+            }
+        }
+    }
+
+    if (server == null) {
+    server = MyNanoHttpd(8080, targetDir)
+    server?.start()
+    Log.d("SERVER", "Server mulai di: http://localhost:8080/")
+    } else {
+    Log.d("SERVER", "Server sudah berjalan")
+    }
+
+    alamat.text = "Server berjalan di: http://localhost:8080/login.html"
+    }
+
+    private fun StopHost() {
+    stopService(Intent(this, ServerService::class.java))
+        val alamat = findViewById<TextView>(R.id.alamat)
+        alamat.text = "Server Mati"
+
+        server?.stop()
+        server = null
+    }
+    
+    private fun kontrolServer(hidup: Boolean) {
+    val intent = Intent(this, ServerService::class.java).apply {
+        action = if (hidup) "START" else "STOP"
+    }
+
+    if (hidup) { startService(intent) }
+    else { stopService(intent) }
+
+    val alamat = findViewById<TextView>(R.id.alamat)
+    alamat.text = if (hidup) "Server berjalan di: http://localhost:8080/login.html" else "Server Mati"
 }
+    
+    //logika
 }
