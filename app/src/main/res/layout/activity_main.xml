@@ -116,6 +116,18 @@
                  android:id="@+id/mulaiHost"
                  android:text="MULAI HOST" />
 
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:background="#afffff"
+                 android:gravity="center"
+                 android:padding="10dp"
+                 android:layout_margin="5dp"
+                 android:textColor="#000000"
+                 android:textIsSelectable="true"
+                 android:text="ALAMAT"
+                 android:id="@+id/alamat" />
+
         </LinearLayout>
 
     </LinearLayout>
