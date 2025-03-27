@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Tambahkan ini di dalam tag <resources> -->
+    <string name="server_status_title">Status Server MemoGo</string>
+    <string name="server_on">Server ON</string>
+    <string name="server_off">Server OFF</string>
+    
+    <!-- Anda juga bisa menambahkan string lain yang dibutuhkan -->
     <string name="app_name">HostingGo</string>
-
 </resources>
