@@ -2,6 +2,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlinx-serialization")
 }
 
 android {
@@ -51,4 +52,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("org.nanohttpd:nanohttpd:2.3.1")
+    implementation("org.json:json:20210307")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 }
